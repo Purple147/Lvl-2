@@ -2,8 +2,9 @@ import requests
 import webbrowser
 q = requests.get("https://api.jikan.moe/v4/top/anime", proxies = {"http": "127.0.0.1:9090"})
 q
-ww = q.json()["data"][0]["title"]
+ww = str(q.json()["data"][0]["title"])
 ee = q.json()["data"][0]["url"]
 print(ww, ee)
 webbrowser.open(ee)
-
+if ww == "one punch man":
+    print("one punch man commin")
